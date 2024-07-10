@@ -6,7 +6,7 @@ let's break down the program first .
 ### leaks : 
 1. a one time leak . notice the string we read into is on the stack in a memory that is not yet nulled out with memset . 
 
-![bug1](/img/ida-bug-fancy.png)
+![bug1](../img/ida-bug-fancy.png)
 
 you could breakpoint at that point and see what values you could leak . the possibilities were a heap,stack and libc leak . Given that we can only leak one i chose the libc leak as it's self sufficient . 
 
@@ -30,5 +30,5 @@ so another way to do after leaking the libc would be like this :
 to this point everything is just fine . Until i realised i have no more mallocs to do , even the strings that fprintf use after arent long enough to call malloc (and they dont print my input too ), i looked for other things to overwrite in libc (found something like **exit_hook** but wasn't possible with my ressources) . this is where i got stuck . any help is much appreciated .
 
 
-![win](/img/win-fancy.png)
+![win](../img/win-fancy.png)
 

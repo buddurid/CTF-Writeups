@@ -2,7 +2,7 @@ a lil bit harder heap challenge than the first one , still doable .
 
 checksec:
 
-![checksec](/imgs/2-checksec.png)
+![checksec](../imgs/2-checksec.png)
 
 the main functionnalities of the program : 
 1. malloc chunk of size <=0x80
@@ -20,5 +20,5 @@ overwriting the heap wont give us code execution . so our target is **libc** . t
 
 check this [link](https://dhavalkapil.com/blogs/FILE-Structure-Exploitation/) for further reading and understanding . 
 
-![flag](/imgs/2-flag.png)
+![flag](../imgs/2-flag.png)
 

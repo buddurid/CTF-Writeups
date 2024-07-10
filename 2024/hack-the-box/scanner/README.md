@@ -5,11 +5,11 @@ so what this means we can brute force character by character the heap value (we 
 
 ### Code execution : 
 
-![main](/img/ida-main-scanner.png)
+![main](../img/ida-main-scanner.png)
 
 our main function has no ret instruction , we cant even overflow to begin with . 
 
-![bug](/img/ida-bug-scanner.png)
+![bug](../img/ida-bug-scanner.png)
 
 see that **__isoc99_scanf("%16s %u", s, a3)** ? our buffer is 16 bytes is 16 bytes long so what's the matter ? well , scanf always adds a null byte to the end of string , so if we make it read 16 bytes it will write a null byte to the rbp . thats the beginning of the end . 
 with that we managed to make rbp a bit lower value . then what ? we still cant make any overflow , right ? 

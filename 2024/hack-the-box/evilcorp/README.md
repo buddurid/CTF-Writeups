@@ -6,14 +6,14 @@ this challenge is one of the most creative challenges ive ever seen , but once y
 
 back to our binary . its compiled with **PIE** and **NX** , and we got no leaks . we got a BOF though in Contact support and our input is gonna be copied in the **SupportMsg** variable in **16 bits unicode**. the input provided will be copied into **SupportMessage** in 16 bit unicode chars . this is very import for later.
 
-![ida](/img/ida-evil.png)
+![ida](../img/ida-evil.png)
 
 how is this an overflow ? the v1 variable is of size **4002x4=16008bytes** , and we are reading into it **4096** unicode characters which as mentionned above is equivalent to **4096*4=16384 bytes** 
 
 in normal conditions we would have the oppurtunity to overwrite the ret adress but it's not the case . or is it ? 
 lets look at the setup function 
 
-![ida-setup](/img/ida-setup-diablos.png)
+![ida-setup](../img/ida-setup-diablos.png)
 
 **SupportMessage** is a pointer to an mmaped memory region . the first parameter in the mmap call is the desirable adress for the mmaped memory region , so if not already used , the mmap should return the value specfied in the first paramter . and just like that we know where that memory region is . for **SupportMessage** it's **0x10000** . 
 another thing to mention is the permissions requested for those regions , **SupportMessage** for example has permissions of 3 >>> RW- . 

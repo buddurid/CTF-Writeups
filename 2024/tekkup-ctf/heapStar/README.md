@@ -1,7 +1,7 @@
 a fairly easy heap challenge , the challenge basically provides a source code and a win condition . You cant ask for more .  
 lets start by checksec'ing the binary . 
 
-![img](/imgs/1-checksec.png)
+![img](../imgs/1-checksec.png)
 
 no pie , that's gonna help . 
 
@@ -47,4 +47,4 @@ to sum up how this works :
 
 just like that we get our first flag . check out my solver if you wanna . 
 
-![flag](/imgs/1-flag.png)
+![flag](../imgs/1-flag.png)

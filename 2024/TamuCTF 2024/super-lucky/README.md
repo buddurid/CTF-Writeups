@@ -15,6 +15,6 @@ rand() , **state[i+3]=a+b** . so yes you guesses it right , we will leak the ent
 
 i never thought the 'unpredictable' random function is this easily implemented tho . never saw it coming .
 
-![flag](/super-lucky/flag.png)
+![flag](./flag.png)
 
 🥲🥲
