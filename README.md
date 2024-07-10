@@ -24,7 +24,7 @@ i watch everything !!!
 
 ---
 
-Writeups
+### Writeups
 
 - [2024](/2024/)
 
